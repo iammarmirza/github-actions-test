@@ -1,0 +1,6 @@
+name: Post Blog on Hashnode
+on: push
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    
