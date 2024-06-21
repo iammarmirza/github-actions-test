@@ -10,7 +10,7 @@ jobs:
         id: print
         uses: iammarmirza/hello-world-javascript-action@v1.5.4
         with:
-          file: "test.md"
+          file: "README.md"
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
 
       - name: Get the output file name
