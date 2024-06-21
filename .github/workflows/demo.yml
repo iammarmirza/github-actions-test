@@ -1,15 +1,18 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  print_file_job:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Print file action step
+        id: print
         uses: iammarmirza/hello-world-javascript-action@v1.5.2
         with:
           file: "test.md"
 
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.file_name }}" 
+      - name: Get the output file name
+        run: echo "The time was ${{ steps.print.outputs.file_name }}"
+
+      - name: Get the hashnode token
+        run: echo "The Hashnode Token is ${{ steps.print.outputs.hashnode_token }}"
