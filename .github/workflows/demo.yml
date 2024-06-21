@@ -14,6 +14,7 @@ jobs:
         with:
           host: "ammarmirza.hashnode.dev"
           hashnode_key: "hn_whs_ks2N1R8IGqwWfBZXQjg0LPpvO"
+          file: "test.md"
       
       - name: Console file data
         run: echo "The file data is ${{ steps.hello.outputs.result_json }}"
