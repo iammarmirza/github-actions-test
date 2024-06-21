@@ -6,11 +6,13 @@ jobs:
     name: A job to print file
 
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Print file action step
         id: print
         uses: iammarmirza/hello-world-javascript-action@v1.5.4
         with:
-          file: "README.md"
+          file: "test.md"
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
 
       - name: Get the output file name
