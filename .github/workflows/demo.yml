@@ -10,7 +10,7 @@ jobs:
         uses: iammarmirza/hello-world-javascript-action@v1.5.3
         with:
           file: "test.md"
-          hashnode_token: ${{secrets.GITHUB_TOKEN}}
+          hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
 
       - name: Get the output file name
         run: echo "The file name is ${{ steps.print.outputs.file_name }}"
