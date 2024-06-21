@@ -3,13 +3,20 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to print file data
     steps:
+      - name: Checking out the file
+        uses: actions/checkout@v4
+        
       - name: Hello world action step
         id: hello
-        uses: iammarmirza/hello-world-javascript-action@v1.1
+        uses: iammarmirza/hello-world-javascript-action@v1.2
         with:
-          who-to-greet: 'Ammar Mirza'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          host: "ammarmirza.hashnode.dev"
+          hashnode_key: "hn_whs_ks2N1R8IGqwWfBZXQjg0LPpvO"
+      
+      - name: Console file data
+        run: echo "The file data is ${{ steps.hello.outputs.result_json }}"
+
+      - name: Console hashnode key
+        run: echo "The hashnode key is ${{steps.hello.outputs.secret__key}}"
