@@ -21,3 +21,7 @@ jobs:
 
       - name: Console hashnode key
         run: echo "The hashnode key is ${{steps.hello.outputs.secret__key}}"
+
+      - name: Console FILE NAME
+        run: echo "The hashnode key is ${{steps.hello.outputs.file__name}}"
+
