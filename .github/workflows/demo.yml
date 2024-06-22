@@ -6,6 +6,10 @@ jobs:
     name: A job to print file
 
     steps:
+      - name: Get changed files
+        id: changed-files
+        uses: SkyHighGrowth/changed-files@v42
+
       - uses: actions/checkout@v4
         with: 
           fetch-depth: 0
@@ -19,3 +23,8 @@ jobs:
 
       - name: Get the hashnode token
         run: echo "The Hashnode Token is ${{ steps.print.outputs.hashnode_token }}"
+
+      - name: Get all changed files
+        env: 
+          ALL_CHANGED_FILES: ${{steps.changed-files.outputs.all_changed_files}}
+        run: echo "The changed files are ${{env.ALL_CHANGED_FILES}}"
