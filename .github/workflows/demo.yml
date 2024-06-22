@@ -17,7 +17,7 @@ jobs:
 
       - name: Print file action step
         id: print
-        uses: iammarmirza/hello-world-javascript-action@v1.7.0
+        uses: iammarmirza/hello-world-javascript-action@v1.7.1
         with:
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
           github_token: ${{secrets.GITHUB_TOKEN}}
