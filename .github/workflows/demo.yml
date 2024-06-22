@@ -14,27 +14,13 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: SkyHighGrowth/gha-changed-files@v1.0.1
-        with:
-          separator: ","
 
       - name: Print file action step
         id: print
-        uses: iammarmirza/hello-world-javascript-action@v1.6.3
+        uses: iammarmirza/hello-world-javascript-action@v1.6.4
         with:
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
           github_token: ${{secrets.GITHUB_TOKEN}}
-
-      - name: Get all changed files
-        env: 
-          ALL_CHANGED_FILES: ${{steps.changed-files.outputs.all_changed_files}}
-        run: echo "The changed files are ${{env.ALL_CHANGED_FILES}}"
-      
-      - name: Get all modified files
-        env:
-          MODIFIED_FILES: ${{steps.changed-files.outputs.modified_files}}
-        run: echo "The modified files are ${{env.MODIFIED_FILES}}"
-      
-      - name: Get all deleted files
-        env: 
-          DELETED_FILES: ${{steps.changed-files.outputs.deleted_files}}
-        run: echo "The deleted files are ${{env.DELETED_FILES}}"
+          added_files: ${{steps.changed-files.outputs.added_files}}
+          modified_files: ${{steps.changed-files.outputs.modified_files}}
+          deleted_files: ${{steps.changed-files.outputs.deleted_files}}
