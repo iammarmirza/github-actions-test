@@ -22,10 +22,17 @@ jobs:
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
           github_token: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Get the hashnode token
-        run: echo "The Hashnode Token is ${{ steps.print.outputs.hashnode_token }}"
-
       - name: Get all changed files
         env: 
           ALL_CHANGED_FILES: ${{steps.changed-files.outputs.all_changed_files}}
         run: echo "The changed files are ${{env.ALL_CHANGED_FILES}}"
+      
+      - name: Get all modified files
+        env:
+          MODIFIED_FILES: ${{steps.changed-files.outputs.modified_files}}
+        run: echo "The modified files are ${{env.MODIFIED_FILES}}"
+      
+      - name: Get all deleted files
+        env: 
+          DELETED_FILES: ${{steps.changed-files.outputs.deleted_files}}
+        run: echo "The deleted files are ${{env.DELETED_FILES}}"
