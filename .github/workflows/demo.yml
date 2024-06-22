@@ -17,6 +17,7 @@ jobs:
         uses: iammarmirza/hello-world-javascript-action@v1.5.6
         with:
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
+          token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Get the output file name
         run: echo "The file name is ${{ steps.print.outputs.file_name }}"
