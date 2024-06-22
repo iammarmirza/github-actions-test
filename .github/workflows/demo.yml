@@ -12,6 +12,7 @@ jobs:
         id: print
         uses: iammarmirza/hello-world-javascript-action@v1.5.5
         with:
+          file: "test2.md"
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
 
       - name: Get the output file name
