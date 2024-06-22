@@ -6,14 +6,15 @@ jobs:
     name: A job to print file
 
     steps:
+      
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+
       - name: Get changed files
         id: changed-files
         uses: SkyHighGrowth/gha-changed-files@v1.0.1
 
-      - uses: actions/checkout@v4
-        with: 
-          fetch-depth: 0
-      
       - name: Print file action step
         id: print
         uses: iammarmirza/hello-world-javascript-action@v1.6.0
