@@ -4,9 +4,13 @@ jobs:
   print_file_job:
     runs-on: ubuntu-latest
     name: A job to print file
+    env: 
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     steps:
       - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
       
       - name: Print file action step
         id: print
