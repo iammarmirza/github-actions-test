@@ -1,5 +1,4 @@
 ---
-title: Blog 1
 ---
 
-# THis is the blog
+# THis is the content
