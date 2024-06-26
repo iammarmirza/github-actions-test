@@ -1,0 +1,16 @@
+on: 
+    repository_dispatch:
+        types: [post_published]
+
+jobs:
+  check_webhook_job:
+    runs-on: ubuntu-latest
+    name: A job to check webhook
+
+    steps:
+        - uses: actions/checkout@v4
+
+        - name: Console if post published
+          run: echo "Heyyyy"
+
+
