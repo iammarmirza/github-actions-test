@@ -8,9 +8,11 @@ jobs:
     name: A job to check webhook
 
     steps:
-        - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: 
+          ref: ${{github.event.client_payload.ref}}
 
-        - name: Console if post published
-          run: echo "Heyyyy"
+      - name: Console if post published
+        run: echo "Heyyyy"
 
 
