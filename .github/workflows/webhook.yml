@@ -9,8 +9,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with: 
-          ref: ${{github.event.client_payload.ref}}
 
       - name: Console if post published
         run: echo `${{github.event.client_payload.publication}}`

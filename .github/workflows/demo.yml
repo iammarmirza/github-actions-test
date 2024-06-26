@@ -1,7 +1,4 @@
-on: 
-  push:
-  repository_dispatch:
-        types: [post_published]
+on: [push]
 
 jobs:
   print_file_job:
@@ -9,11 +6,9 @@ jobs:
     name: A job to print file
 
     steps:
-      
       - uses: actions/checkout@v4
         with: 
           fetch-depth: 0
-          ref: ${{github.event.client_payload.ref}}
 
       - name: Get changed files
         id: changed-files
