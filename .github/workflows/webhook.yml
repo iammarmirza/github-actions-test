@@ -13,6 +13,6 @@ jobs:
           ref: ${{github.event.client_payload.ref}}
 
       - name: Console if post published
-        run: echo "Heyyyy"
+        run: echo `${{github.event.client_payload.publication}}`
 
 
