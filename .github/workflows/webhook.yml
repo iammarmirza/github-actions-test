@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Console if post published
-        run: echo `${{github.event.client_payload.publication}}`
+        run: echo `${{github.event.client_payload}}`
 
 
