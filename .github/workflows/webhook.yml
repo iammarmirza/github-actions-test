@@ -1,6 +1,6 @@
 on: 
     repository_dispatch:
-        types: [post_published]
+        types: [trigger]
 
 jobs:
   check_webhook_job:
