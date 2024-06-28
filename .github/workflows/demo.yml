@@ -26,7 +26,7 @@ jobs:
           added_files: ${{steps.changed-files.outputs.added_files}}
           modified_files: ${{steps.changed-files.outputs.modified_files}}
           deleted_files: ${{steps.changed-files.outputs.deleted_files}}
-          hashnode_event: ${{toJson(github.event.client_payload)}}
+          hashnode_event: ${{github.event.client_payload}}
         
         env: 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
