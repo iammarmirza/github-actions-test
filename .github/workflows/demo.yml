@@ -19,7 +19,7 @@ jobs:
 
       - name: Publish file on Hashnode
         id: print
-        uses: iammarmirza/hello-world-javascript-action@v2.4.5
+        uses: iammarmirza/hello-world-javascript-action@v2.4.6
         with:
           hashnode_host: "ammarmirza.hashnode.dev"
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
