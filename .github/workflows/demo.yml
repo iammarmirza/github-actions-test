@@ -19,9 +19,10 @@ jobs:
 
       - name: Publish file on Hashnode
         id: print
-        uses: iammarmirza/hello-world-javascript-action@v2.8.3
+        uses: iammarmirza/hello-world-javascript-action@v2.8.4
         with:
           hashnode_host: "ammarmirza.hashnode.dev"
+          github_personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
           added_files: ${{steps.changed-files.outputs.added_files}}
           modified_files: ${{steps.changed-files.outputs.modified_files}}
