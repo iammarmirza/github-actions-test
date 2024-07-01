@@ -7,6 +7,8 @@ jobs:
   print_file_job:
     runs-on: ubuntu-latest
     name: A job to publish article on Hashnode
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +22,8 @@ jobs:
       - name: Publish file on Hashnode
         id: print
         uses: iammarmirza/hello-world-javascript-action@v2.8.6
+        env: 
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           hashnode_host: "ammarmirza.hashnode.dev"
           hashnode_token: ${{ secrets.HASHNODE_TOKEN }}
@@ -27,6 +31,3 @@ jobs:
           modified_files: ${{steps.changed-files.outputs.modified_files}}
           deleted_files: ${{steps.changed-files.outputs.deleted_files}}
           hashnode_event: ${{toJson(github.event.client_payload)}}
-        
-        env: 
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
